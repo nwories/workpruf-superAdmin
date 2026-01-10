@@ -1,0 +1,207 @@
+/* import fomt */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --bg: #f4f7fb;         /* page background gradient start */
+  --card: #ffffff;       /* card background */
+  --accent: #1f6feb;     /* primary action color */
+  --danger: #d9534f;     /* error color */
+  --muted: #6b7280;      /* secondary / muted text */
+}
+
+
+/* -----------------------------
+   2) Resets / Base
+   ----------------------------- */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+html {
+  /* Page background: combine gradient + optional wallpaper image (full-viewport) */
+  background: linear-gradient(180deg, var(--bg), #eef3fb);
+  background-image: linear-gradient(180deg, var(--bg), #eef3fb), url('Wallpaper Picture.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180.01deg, rgba(45, 95, 245, 0) -47.88%, #0E1E30 99.99%), url('Wallpaper Picture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* -----------------------------
+   3) Layout
+   ----------------------------- */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  width: 100%;
+}
+
+
+/* -----------------------------
+   4) Card / Panel
+   ----------------------------- */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(22, 27, 40, 0.08);
+  overflow: hidden;
+}
+
+.card-header { 
+  padding: 28px 28px 12px;
+}
+
+.card-header img{
+  width: 150px;
+}
+.card-header h1 { 
+  margin: 0; 
+  /* font-size: 20px; */
+  font-family: Inter; 
+}
+.card-header{ text-transform: uppercase;}
+.card-header{ text-align: center;}
+.card-header{
+    font-family: Inter;
+    font-weight: bold;
+}
+.subtitle { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+
+.card-body {
+  padding: 18px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* -----------------------------
+   5) Form Controls
+   ----------------------------- */
+label { font-size: 13px; color: var(--muted); }
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border: none;
+  outline: none;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+}
+
+.password-container:focus-within {
+  border: none;
+  outline: none;
+}
+
+.password-container input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+  font-size: inherit;
+}
+
+.password-container button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #666;
+}
+
+.row { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-top: 8px; }
+
+.row-small{ 
+  margin-top: 4px;
+  text-align: center; 
+}
+
+.reset-link { 
+  color: var(--accent); 
+  text-decoration: none; 
+  font-size: 13px;
+  text-align: center; 
+}
+.reset-link:hover { 
+  text-decoration: 2px underline; }
+
+
+/* -----------------------------
+   6) Buttons
+   ----------------------------- */
+.btn { padding: 10px 14px; border-radius: 8px; border: 0; cursor: pointer; }
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  width: 100%;
+  font-weight: 600;
+}
+
+
+/* -----------------------------
+   7) Messages
+   ----------------------------- */
+.error { color: var(--danger); font-size: 13px; margin-top: 6px; }
+.success { color: green; font-size: 13px; margin-top: 6px; }
+
+
+/* -----------------------------
+   8) Footer
+   ----------------------------- */
+.card-footer { 
+  padding: 12px 28px 20px; 
+  border-top: 1px solid #f1f5f9; 
+  color: var(--muted); 
+  font-size: 12px; }
+
+
+/* -----------------------------
+   9) Responsive
+   ----------------------------- */
+@media (max-width: 420px) {
+  .card { border-radius: 8px; padding: 0; }
+}
+

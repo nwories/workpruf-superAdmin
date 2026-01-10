@@ -1,0 +1,866 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* container */
+.container{
+    display: flex;
+    font-family: "Inter", sans-serif;
+    background: var(--Brand-Light, #F5F6FA);
+
+}
+
+/* DASHBOARD LEFT */
+
+/* sidebar layout */
+.container .sidebar{
+    width: 240px;
+    /* height: 2180px; */
+    opacity: 1;
+    background: #FFFFFF;
+    border-right: 1px solid var(--Grey-Grey-100, #E8E8E8)
+}
+/* sidebar logo */
+.sidebar .logo-container{
+    width: 240px;
+    height: 64.5px;
+    border-bottom: 1px solid var(--Grey-Grey-100, #E8E8E8)
+}
+.sidebar .logo-container img{
+    width: 99.2%;
+}
+.sidebar .main{
+    width: 208px;
+    height: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19.5px;
+    letter-spacing: 0%;
+    color: #7B91B0;
+}
+.sidebar .menu{
+    width: 208px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.sidebar .menu .btn{
+    width: 208px;
+    height: 37px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.sidebar .menu .btn.clicked{
+    width: 208px;
+    height: 37px;
+    border-radius: 5px;
+    background: #1A4B84;
+    color: #FFFFFF;
+    margin-top: 12px;
+}
+.sidebar .menu .btn .icon-text{
+    width: 176px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.menu-iconA{
+    margin-top: 6px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 12px;
+    margin-left: 40px;
+}
+.items li a{
+    text-decoration: none;
+    color: #7B91B0;
+}
+.items li a:hover{
+    color: #1A4B84;
+    font-weight: bold;
+}
+.items.closed{
+    height: 0;
+    overflow: hidden;
+}
+.btn.active{
+    width: 208px;
+    height: 37px;
+    border-radius: 5px;
+    background: #1A4B84;
+    color: #FFFFFF;
+    margin-top: 12px;
+}
+.btn.active 
+.arrow-icon svg{
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
+}
+.btn.active
+svg path{
+    stroke: white;
+    fill: white;
+}
+.btn.active
+.arrow-icon svg path{
+    stroke: white;
+    fill: none;
+}
+/* sidebar main */
+.sidebar .main-container{
+    width: 240px;
+    opacity: 1;
+    border-right-width: 1px;
+    gap: 10px;
+    padding: 16px;
+
+}
+
+/* DASHBOARD RIGHT */
+
+.container .dashboard-right{
+    width: 100%;
+}
+/* nav bar--left-side */
+.dashboard-right .top-bar{
+    width: 100%;
+    height: 64.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 24px;
+    border-bottom: 1px solid #E8E8E8;
+    background:  #FFFFFF;
+}
+.top-bar .nav-menu-container{
+    display: flex;
+    width: 621px;
+    height: 33px;
+    opacity: 1;
+    gap: 16px;
+}
+.top-bar .search-container{
+    width: 264px;
+    height: 33px;
+    opacity: 1;
+    gap: 16px;
+
+}
+input{
+    width: 264px;
+    height: 33px;
+    opacity: 1;
+    border-radius: 5px;
+    gap: 80px;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    border-width: 1px;
+    border: 1px solid #E8E8E8;
+}
+input:focus{
+    outline: none;
+}
+.search{
+    position: absolute;
+    left: 315px;
+    top: 20px;
+}
+/* nav bar--right-side */
+.main{
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+/* top bar */
+.top-bar .nav-icon-container{
+    display: flex;
+    width: 112px;
+    height: 32px;
+    opacity: 1;
+    gap: 8px;
+}
+.flag-container, 
+.notification-bell,
+.profile-image-container{
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    gap: 24px;
+}
+/* admin dashboard/home */
+.admin-home-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 24px;
+    opacity: 1;
+    margin: 10px 0;
+    gap: 24px;
+}
+.admin-title{
+    width: 70%;
+    height: 24;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #000000;
+}
+.admin-home{
+    display: flex;
+    align-items: center;
+    width: 180px;
+    height: 21px;
+    opacity: 1;
+    gap: 4px;
+}
+.admin-home a{
+    width: 40px;
+    height: 21px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+    color: #7B91B0;
+}
+.admin-home .home-text{
+    width: 140px;
+    height: 21px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #000000;
+}
+/* today's sales */
+.today-sale-container{
+    width: 100%;
+    height: 172px;
+    opacity: 1;
+    background: #1A4B84;
+    border-radius: 20px;
+    border: 1px solid #F8F9FA;
+    box-shadow: 0px 4px 20px 0px #EEEEEE80;
+}
+.today-sale-container .export-btn-container{
+    width: 100px;
+    height: 35px;
+    opacity: 1;
+    margin-top: 5px;
+    margin-left: 89%;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #C3D3E2;
+    cursor: pointer;
+}
+.export-btn-container button{
+    height: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.export-btn-container button span{
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #7B91B0;
+}
+/* sales container */
+.sales-container{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    gap: 24px;
+}
+.sales-container .sales{
+    width: 247.2px;
+    height: 130px;
+    opacity: 1;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    gap: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 16.7px;
+    margin-top: 2px;
+}
+.sales .input-container{
+    width: 100%;
+    height: 49px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sales .input-container .text{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    margin-bottom: 5px;
+}
+.sales .input-container input{
+    width: 100%;
+    height: 24px;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #1A1A1A;
+    border: none;
+    margin-left: -11px;
+}
+/* check sales percentage */
+.sales .check-sales-container{
+    width: 100%;
+    height: 21px;
+    display: flex;
+    gap: 10px;
+    margin-top: 17px;
+}
+.check-sales-container .percentage-box-container{
+    width: 50px;
+    height: 17px;
+    opacity: 1;
+    gap: 4px;
+    border-radius: 4px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #DC3545;
+}
+.percentage-box-container.green{
+    background: #01B664;
+}
+.percentage-box-container .label{
+    width: 15px;
+    height: 13px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+.check-sales-container .day-count{
+    width: 97px;
+    height: 21px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    color: #5F5F5F;
+    margin-top: -2px;
+}
+/* TOTAL REVENUE */
+.main .revenue-container{
+    width: 100%;
+    height: 440px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #F8F9FA;
+    box-shadow: 0px 4px 20px 0px #EEEEEE80;
+}
+.revenue-container
+.revenue-graph-container{
+    width: 94%;
+    height: 387.1px;
+    position: relative;
+    top: 15px;
+    left: 45px;
+}
+.revenue-graph-container
+.title-date-container{
+    width: 100%;
+    height: 39.55px;
+    display: flex;
+    gap: 20px;
+}
+.title-date-container .title{
+    width: 322px;
+    height: 40.53px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    position: relative;
+    left: 345px;
+
+}
+.title-date-container .date{
+    width: 266px;
+    height: 39.55px;
+    position: relative;
+    left: 388px;
+    display: flex;
+}
+.date .day,
+.date .month{
+    width: 76px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date .week{
+    width: 62px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date .day span,
+.date .week span,
+.date .month span{
+    width: 45px;
+    height: 21px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #7B91B0;
+}
+.date .week span{
+    color: #000000;
+}
+/* CHARTS */
+/* bar chart */
+.bar-chart-container{
+    width: 94%;
+    height: 300.85px;
+    position: relative;
+    left: 30px;
+    top: 28px;
+}
+.charts{
+    width: 100%;
+}
+/* histogram and pie chart */
+.histogram-pie-chart-container{
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+/* histogram */
+.histogram{
+    width: 59.5%;
+    height: 440px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid var(--Grey-Grey-100, #E8E8E8);
+}
+.project-statistics-header{
+    display: flex;
+    width: 100%;
+    height: 54px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--Grey-Grey-100, #E8E8E8)
+}
+.project-statistics-header 
+.project-statistics-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+.project-statistics-title span{
+    height: 22px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21.6px;
+    letter-spacing: 0%;
+    color: #000000;
+}
+.project-statistics-header 
+.project-statistics-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.project-statistics-date .histo-day,
+.project-statistics-date .histo-month{
+    width: 76px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-statistics-date .histo-week{
+    width: 62px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-statistics-date .histo-day span,
+.project-statistics-date .histo-week span,
+.project-statistics-date .histo-month span{
+    width: 45px;
+    height: 21px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #7B91B0;
+}
+.project-statistics-date .histo-week span{
+    color: #000000;
+}
+.project-statistics-graph{
+    width: 100%;
+    height: 386px;
+    padding: 20px;
+}
+/* pie chart */
+.pie-chart{
+    width: 40.5%;
+    height: 440px;
+    border-radius: 20px;
+    background: #FFFFFF;
+}
+.pie-chart .pie-chart-title{
+    width: 223px;
+    height: 27.16px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+    position: relative;
+    top: 12px;
+    left: 90px;
+}
+.pie-chart 
+.pie-chart-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 43.46px;
+    margin-top: 7px;
+    margin-left: 172px;
+}
+.pie-chart-date .pie-day,
+.pie-chart-date .pie-month{
+    width: 76px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-chart-date .pie-week{
+    width: 62px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-chart-date .pie-day span,
+.pie-chart-date .pie-week span,
+.pie-chart-date .pie-month span{
+    width: 45px;
+    height: 21px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #7B91B0;
+}
+.pie-chart-date .pie-day span{
+    color: #000000;
+}
+/* pie chart graph */
+.pie-chart .pie-graph{
+    width: 343.75px;
+    height: 275.83px;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+/* SUBSCRIPTION REVENUE HEALTH & SECTOR BASED USAGE INSIGHTS (SRHSBI) */
+.srhsbi-container{
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+/* subscription and health revenue */
+.srh{
+    width: 40.5%;
+    height: 440px;
+    border-radius: 20px;
+    background: #FFFFFF;
+}
+/* .srh .srh-title{
+    width: 299px;
+    height: 24px;
+    position: relative;
+    top: 13px;
+    left: 56px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+} */
+/* date */
+/* .srh 
+.srh-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 51.16px;
+    margin-top: 17px;
+    margin-left: 189px;
+}
+.srh-date .srh-day,
+.srh-date .srh-month{
+    width: 76px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.srh-date .srh-week{
+    width: 62px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.srh-date .srh-day span,
+.srh-date .srh-week span,
+.srh-date .srh-month span{
+    width: 45px;
+    height: 21px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #7B91B0;
+}
+.srh-date .srh-day span{
+    color: #000000;
+} */
+
+/* sector based insights */
+/* sbi header */
+.sbi{
+    width: 59.5%;
+    height: 440px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid var(--Grey-Grey-100, #E8E8E8);
+}
+.sbi .sbi-header{
+    display: flex;
+    width: 100%;
+    height: 57.24px;
+    gap: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 16px 20px;
+    /* border-bottom: 1px solid var(--Grey-Grey-100, #E8E8E8); */
+}
+.sbi-header .header-title{
+    width: 50%;
+    height: 46px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21.6px;
+    letter-spacing: 0%;
+}
+.sbi-header .header-title span{
+    display: block;
+    font-size: 12px;
+    color: #7B91B0;
+}
+/* date */
+.sbi 
+.sbi-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 44px;
+    margin-top: 1px;
+}
+.sbi-date .sbi-day,
+.sbi-date .sbi-month{
+    width: 76px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sbi-date .sbi-week{
+    width: 62px;
+    height: 39.55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sbi-date .sbi-day span,
+.sbi-date .sbi-week span,
+.sbi-date .sbi-month span{
+    width: 45px;
+    height: 21px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #7B91B0;
+}
+.sbi-date .sbi-day span{
+    color: #000000;
+} 
+/* sbi body */
+.sbi .sbi-body{
+    width: 100%;
+    height: 382.76px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px;
+}
+.sbi-body .sbi-items-container{
+    width: 590px;
+    height: 37.37px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sbi-items-container .sbi-items{
+    width: 484px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sbi-items-container .progress-bar-container{
+    display: flex;
+    flex-direction: column;
+    width: 98px;
+    height: 31.23px;
+}
+.sbi-items span{
+    width: 72px;
+    height: 21px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    color: #1A1A1A;
+    margin-left: 4px;
+}
+.progress-bar-container .timer{
+    width: 98px;
+    height: 17px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: right;
+    color: #7B91B0;
+}
+/* .progress-bar-container .progress-bar{
+    background-color: #E8E8E8;
+    height: 6px;
+} */
+
+/* STAFF ACTIVITY INSIGHTS */
+.main .sai-container{
+    width: 100%;
+    height: 440px;
+    border-radius: 20px;
+}
+
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 37px;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 8px;
+    background: var(--Brand-White, #FFFFFF);
+    border-top: 1px solid var(--Grey-Grey-100, #E8E8E8);
+}
+footer span{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    color: #7B91B0;
+}

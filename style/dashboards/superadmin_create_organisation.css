@@ -1,0 +1,474 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* container */
+.container{
+    display: flex;
+    font-family: "Inter", sans-serif;
+    background: var(--Brand-Light, #F5F6FA);
+
+}
+
+/* DASHBOARD LEFT */
+
+/* sidebar layout */
+.container .sidebar{
+    width: 240px;
+    /* height: 2180px; */
+    opacity: 1;
+    background: #FFFFFF;
+    border-right: 1px solid var(--Grey-Grey-100, #E8E8E8)
+}
+/* sidebar logo */
+.sidebar .logo-container{
+    width: 240px;
+    height: 64.5px;
+    border-bottom: 1px solid var(--Grey-Grey-100, #E8E8E8)
+}
+.sidebar .logo-container img{
+    width: 99.2%;
+}
+.sidebar .main{
+    width: 208px;
+    height: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19.5px;
+    letter-spacing: 0%;
+    color: #7B91B0;
+}
+.sidebar .menu{
+    width: 208px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.sidebar .menu .btn{
+    width: 208px;
+    height: 37px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.sidebar .menu .btn.clicked{
+    width: 208px;
+    height: 37px;
+    border-radius: 5px;
+    background: #1A4B84;
+    color: #FFFFFF;
+    margin-top: 12px;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar .menu .btn .icon-text{
+    width: 176px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.menu-iconA{
+    margin-top: 6px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 12px;
+    margin-left: 40px;
+    transition: all 3s ease;
+}
+.items li a{
+    text-decoration: none;
+    color: #7B91B0;
+}
+.items li a:hover{
+    color: #1A4B84;
+    font-weight: bold;
+}
+.items.closed{
+    height: 0;
+    overflow: hidden;
+    transition: all 3s ease-in-out;
+}
+.btn.active{
+    width: 208px;
+    height: 37px;
+    border-radius: 5px;
+    background: #1A4B84;
+    color: #FFFFFF;
+    margin-top: 12px;
+}
+.btn.active 
+.arrow-icon svg{
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
+}
+.btn.active
+svg path{
+    stroke: white;
+    fill: white;
+}
+.btn.active
+.arrow-icon svg path{
+    stroke: white;
+    fill: none;
+}
+/* sidebar main */
+.sidebar .main-container{
+    width: 240px;
+    opacity: 1;
+    border-right-width: 1px;
+    gap: 10px;
+    padding: 16px;
+
+}
+
+/* DASHBOARD RIGHT */
+
+.container .dashboard-right{
+    width: 100%;
+}
+/* nav bar--left-side */
+.dashboard-right .top-bar{
+    width: 100%;
+    height: 64.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 24px;
+    border-bottom: 1px solid #E8E8E8;
+    background:  #FFFFFF;
+}
+.top-bar .nav-menu-container{
+    display: flex;
+    width: 621px;
+    height: 33px;
+    opacity: 1;
+    gap: 16px;
+}
+.top-bar .search-container{
+    width: 264px;
+    height: 33px;
+    opacity: 1;
+    gap: 16px;
+
+}
+input{
+    width: 264px;
+    height: 33px;
+    opacity: 1;
+    border-radius: 5px;
+    gap: 80px;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    border-width: 1px;
+    border: 1px solid #E8E8E8;
+}
+input:focus{
+    outline: none;
+}
+.search{
+    position: absolute;
+    left: 315px;
+    top: 20px;
+}
+/* nav bar--right-side */
+.main{
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+/* top bar */
+.top-bar .nav-icon-container{
+    display: flex;
+    width: 112px;
+    height: 32px;
+    opacity: 1;
+    gap: 8px;
+}
+.flag-container, 
+.notification-bell,
+.profile-image-container{
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    gap: 24px;
+}
+/* admin dashboard/home */
+.admin-home-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 24px;
+    opacity: 1;
+    margin: 10px 0;
+    gap: 24px;
+}
+.admin-title{
+    width: 70%;
+    height: 24;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #000000;
+}
+.admin-home{
+    display: flex;
+    align-items: center;
+    width: 190px;
+    height: 21px;
+    opacity: 1;
+    gap: 4px;
+}
+.admin-home a{
+    width: 40px;
+    height: 21px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: none;
+    color: #7B91B0;
+}
+.admin-home .home-text{
+    width: 190px;
+    height: 21px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #000000;
+}
+/* CREATE ORGANISATION FORM */
+.main .form-container{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: #FFFFFF;
+}
+.form-container form{
+    width: 98.5%;
+    margin-left: 40px;
+}
+form .details-title-container{
+    width: 217px;
+    height: 44px;
+    padding: 10px;
+}
+.details.gap{
+    margin: 40px 0;
+}
+.details-title-container .title{
+    width: 350px;
+    height: 24px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+.full-B{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+form label{
+    display: block;
+    width: 210oxpx;
+    height: 24px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #778089;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.right label{
+    margin-left: 40px;
+}
+form input{
+    width: 318px;
+    height: 45px;
+    padding: 8px;
+    margin-left: 10px;
+    gap: 10px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    border: 1px solid #778089;
+}
+.select-wrapper{
+    position: relative;
+    width: 318px;
+    height: 45px;
+    padding: 8px;
+    margin-left: 10px;
+    gap: 10px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    border: 1px solid #778089
+}
+.select-wrapper select{
+    width: 100%;
+    height: 25px;
+    appearance: none;
+    --webkit-appearance: none;
+    --moz-appearance: none;
+    border: none;
+}
+.select-wrapper span{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: translate(-50%);
+    pointer-events: none;
+}
+input ::placeholder{
+    width: 302px;
+    height: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    background: #000000;
+    color: #000000;
+}
+select:focus{
+    outline: none;
+    border: none;
+}
+option{
+    width: 286px;
+    height: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #333333;
+    background-color: #E8E8E8;
+}
+.email-verify{
+    margin-right: 25px;
+}
+/* button to toggle email and location verification */
+.toggle-container{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 170px;
+}
+.toggle-container .toggle{
+    width: 40px;
+    height: 22.5px;
+    background: #3550DC;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.toggle-container .toggle 
+span{
+    width: 22px;
+    height: 22.5px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+.toggle .toggle-on{
+    right: 0;
+    display: block;
+}
+.toggle .toggle-off{
+    display: none;
+}
+
+/* Invite & System Automation section */
+.left.check{
+    display: flex;
+    gap: 20px;
+}
+.left .checkbox{
+    width: 40px;
+}
+.generate{
+    width: 150px;
+    margin-top: -3px;
+}
+.invite{
+    margin-bottom: 20px;
+}
+.onboard{
+    position: relative;
+    top: -50px;
+}
+
+/* create organisation button */
+.btn-container{
+    position: absolute;
+    top: 1870px;
+    left: 1065px;
+}
+.btn-container button{
+    width: 174px;
+    height: 45px;
+    border: 1px solid #C3D3E2;
+    border-radius: 8px;
+    background: #3550DC;
+    color: #FFFFFF;
+}
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 37px;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 8px;
+    background: var(--Brand-White, #FFFFFF);
+    border-top: 1px solid var(--Grey-Grey-100, #E8E8E8);
+}
+footer span{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    color: #7B91B0;
+}

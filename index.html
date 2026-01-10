@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Super Admin — Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="super-admin-login.css">
+</head>
+<body>
+  <div class="container">
+    <form id="loginForm" class="card" novalidate>
+      <header class="card-header">
+        <img src="WhatsApp Image 2025-12-21 at 14.34.21_a15651f3.jpg" alt="WorkPruf Logo" class="logo">
+        <p class="subtitle">Enter your work email to sign in</p>
+      </header>
+
+      <div class="card-body">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="admin@work.com" autocomplete="username">
+
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input id="password" name="password" type="password" required minlength="8" autocomplete="current-password" placeholder="Enter your password">
+          <button type="button" id="togglePassword" aria-label="Show password"><i class="fas fa-eye"></i></button>
+        </div>
+
+        <div class="row">
+          <button type="submit" class="btn primary">Sign in</button>
+        </div>
+
+        <div class="row-small">
+          <a href="#" id="resetPassword" class="reset-link">Forgot your password?</a>
+        </div>
+
+        <p class="error" role="alert" id="errorMsg" hidden></p>
+        <p class="success" id="successMsg" hidden>Signed in (Successfully) - Open dashboard.html to continue</p>
+      </div>
+
+      <footer class="card-footer">
+        <small>WorkPruf Super Admin access is restricted. Use your admin account.</small>
+      </footer>
+    </form>
+  </div>
+
+  <script src="super-admin-login.js"></script>
+</body>
+</html>
