@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //     window.location.href = 'https://workpruf-bk.onrender.com/api-docs?email=' + encodeURIComponent(em);
 //   });
 
+const spinner = document.getElementById('spinner');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   const em = email.value.trim();
@@ -56,37 +57,15 @@ form.addEventListener('submit', function(e) {
     return showError('Password must be 8-20 chars, with upper, lower, number & special char');
   }
 
+  spinner.hidden = false; // show spinner
   fetch('https://workpruf-bk.onrender.com/api/auth/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: em, password: pw })
   })
   .then(res => res.json())
-  // .then(data => {
-  //   if (data.token) {
-  //     // Store token (e.g., in localStorage) and redirect
-  //     localStorage.setItem('token', data.token);
-  //     window.location.href = 'pages/dashboards/superadmin_dashboard_overview.html';
-  //   } else {
-  //     showError(data.message || 'Invalid credentials');
-  //   }
-  // })
-  // .catch(err => {
-  //   showError('Error logging in. Try again.');
-  //   console.error(err);
-  // });
-//   .then(data => {
-//   console.log('Response data:', data);
-//   if (data.token) {
-//     console.log('Token:', data.token);
-//     localStorage.setItem('token', data.token);
-//     console.log('Stored token:', localStorage.getItem('token')); // check if stored
-//     window.location.href = 'pages/dashboards/superadmin_dashboard_overview.html';
-//   } else {
-//     showError(data.message || 'Invalid credentials');
-//   }
-// })
-.then(data => {
+  .then(data => {
+    spinner.hidden = true; // hide spinner
   if (data.user) {
     showSuccess('Super Admin Login successful!');
     setTimeout(() => {
@@ -97,5 +76,10 @@ form.addEventListener('submit', function(e) {
     showError(data.message || 'Login failed');
   }
 })
+.catch(err => {
+    spinner.hidden = true; // hide spinner on error
+    showError('Error logging in. Try again.');
+    console.error(err);
+  });
 });
 });
