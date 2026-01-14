@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="signupForm">
+  <div>
+    <label for="signupEmail">Email:</label>
+    <input type="email" id="signupEmail" required>
+  </div>
+  <div>
+    <label for="signupPassword">Password:</label>
+    <input type="password" id="signupPassword" required>
+  </div>
+  <div>
+    <label for="signupPasswordConfirm">Confirm Password:</label>
+    <input type="password" id="signupPasswordConfirm" required>
+  </div>
+  <button type="submit">Sign Up</button>
+  <p id="signupError" hidden></p>
+  <p id="signupSuccess" hidden></p>
+</form>
+<script src="signup.js"></script>
+</body>
+</html>
